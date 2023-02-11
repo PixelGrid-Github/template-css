@@ -1,19 +1,31 @@
-*, body {
+*,
+*::before,
+*::after,
+body {
   margin: 0;
   box-sizing: border-box;
 }
 
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
 /* start text transforms */
-.text_transform_uppercase {
+.uppercase {
   text-transform: uppercase;
 }
 
-.text_transform_capitalize {
+.capitalize {
   text-transform: capitalize;
 }
 
-.text_transform_lowercase {
+.lowercase {
   text-transform: lowercase;
+}
+
+.tt_initial {
+  text-transform: initial;
 }
 
 /* end text transforms */
@@ -54,4 +66,72 @@
   font-weight: 900;
 }
 
-/* end font weights *//*# sourceMappingURL=template.css.map */
+/* end font weights */
+/* start lists */
+ol,
+ul {
+  padding-left: 19px;
+}
+
+/* end lists */
+.hidden {
+  display: none;
+}
+
+.img_responsive {
+  max-width: 100%;
+  margin: auto;
+}
+
+/* start containers */
+:root {
+  --container_width: 100%;
+  --container_padding: 15px;
+  --container_space: calc((100% - var(--container_width)) / 2);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  :root {
+    --container_width: 760px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  :root {
+    --container_width: 1000px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --container_width: 1190px;
+  }
+}
+@media (min-width: 1400px) {
+  :root {
+    --container_width: 1190px;
+  }
+}
+
+.container {
+  max-width: var(--container_width);
+  width: 100%;
+  padding-inline: var(--container_padding);
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.container_left {
+  max-width: 100%;
+  width: 100%;
+  margin-left: calc(var(--container_space));
+  padding-left: var(--container_padding);
+  box-sizing: border-box;
+}
+
+.container_right {
+  max-width: 100%;
+  width: 100%;
+  margin-right: calc(var(--container_space));
+  padding-right: var(--container_padding);
+  box-sizing: border-box;
+}
+
+/* end containers *//*# sourceMappingURL=template.css.map */
